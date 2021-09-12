@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block _content %}
+
+
+<h1>ini adalah halaman Mahasiswa</h1>
+
+<table style="text-align: center;">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Register Numeber</th>
+        <th>Department</th>
+        <th>Action</th>
+    </tr>
+    {% for m in data %}
+    <tr>
+        <td>{{ m["nama"] }}</td>
+        <td>{{ m["email"] }}</td>
+        <td>{{ m["nim"] }}</td>
+        <td>{{ m["jurusan"] }}</td>
+        <td>
+            <a href="mahasiswa/edit/{{ m.id }}">Edit</a>
+            <a href="mahasiswa/view/{{ m.id }}">View</a>
+            <a href="mahasiswa/delete/{{ m.id }}">Delete</a>
+        </td>
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+<br>
+
+<a href="/mahasiswa/tambah" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Add Students</a>
+
+<!-- <a href="/mahasiswa/tambah" button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false">
+    Add Student
+</button> -->
+
+<br>
+
+<!-- <a type="botton" href="/mahasiswa/tambah" class="btn btn-outline-dark">Add Student
+</button> -->
+
+{% endblock %}

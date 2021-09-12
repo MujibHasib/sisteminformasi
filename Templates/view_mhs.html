@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block _content %}
+
+<h1>View Data</h1>
+
+<ul>
+    <li>Name: <b>{{ user.nama }}</b></li>
+    <li>Email: <b>{{ user.email }}</b></li>
+    <li>Reg Number: <b>{{ user.nim }}</b></li>
+    <li>Department: <b>{{ user.jurusan }}</b></li>
+</ul>
+
+<a href="/mahasiswa">Return to Students' Data</a>
+
+{% endblock %}
